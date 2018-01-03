@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <head>
+        <meta charset="UTF-8">
+        <title>test</title>
+        <style>
+            #div {
+                width: 100px;
+                height: 50px;
+                border: 1px solid red;
+                color: green;
+                text-align: center;
+            }
+             
+            input {
+                width: 250px;
+            }
+        </style>
+        <script>
+            function test() {
+                var a = document.getElementById('a');
+                var b = document.getElementById('b');
+                var div = document.getElementById('div');
+                 
+                div.style.width = a.value + 'px';
+                div.style.height = b.value + 'px';
+            }
+        </script>
+    </head>
+ 
+    <body>
+        <div>宽度（默认100px）：<input type="text" id="a" placeholder="输入想要的宽度，点击测试看效果" /></div>
+        <div>高度（默认50px）：<input type="text" id="b" placeholder="输入想要的高度，点击测试看效果" /></div>
+        <div><button onclick="test()">点击测试</button></div>
+        <div id="div">来改变我</div>
+    </body>
+ 
+</html>

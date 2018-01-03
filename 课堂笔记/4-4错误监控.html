@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>错误监控</title>
+		<script>
+		  window.addEventListener('error', function (e) {
+        console.log('捕获', e);
+      }, true);
+		</script>
+	</head>
+	<body>
+	     前端错误的分类
+	     错误的捕获方式
+	     上报错误的基本原理
+	     
+	     问：如何监测js错误？（直接）
+	             如何保证你的产品质量？产品质量体系
+	             
+	  1、 前端错误的分类:
+    	  即时运行错误：代码错误
+    	  资源加载错误(图片、js、css加载失败)
+	  2、错误的捕获方式:
+	           即时运行错误的捕获方式
+	      1、try{} catch(){} 2、window.onerror 或者 addEventLinster('error',function(){})
+	           资源加载错误
+	      1、object.onerror 2、performance.getEntries() 3、Error事件捕获
+	     window.onerror不会捕获到资源加载错误，因为资源加载错误不会向上冒泡到window。但是可以在捕获阶段获得。
+	     
+	            第一步： performance.getEntries().forEach(item => {      // 将数组遍历，这些资源就是成功加载的。例如：所有图片。已经成功加载的
+       console.log(item.name);
+       })
+                  第二步: 
+		    document.getElementsByTagName("img"); // 所有需要加载的
+                   第三步：将上述2种获得的数值相减
+       
+        3、error.html
+        
+    3、上报错误的基本原理
+      1、采用Ajax通信的方式上报（可以，但是都不通过这种方式）
+      2、利用Image对象上报  (new Image()).src = 'http://baidu.com/tesjk?r=tksjk';
+      
+	      延伸：跨域的js运行错误可以捕获吗，错误提示什么，应该怎么处理？
+	            错误信息：Script error 。其他拿不到因为没有权限。通过解决办法可以拿到详细信息。
+	            解决：1、客户端 在script标签增加crossorigin属性
+	        2、在服务端 设置js资源响应头Access-Control-Allow-Origin:*/指定的域名
+	  
+	</body>
+	
+	<script src="qwe.js" ></script>
+	<script type="text/javascript">
+		 try{
+		 	console.log(a)
+		 }catch(e){
+		   console.log(e);
+		 }
+		 console.log(1);
+		
+	</script>
+</html>

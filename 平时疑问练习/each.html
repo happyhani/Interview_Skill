@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="width: 200px;"></div>
+		<div style="width: 400px;"></div>
+		<div style="width: 500px;"></div>
+		
+		<script type="text/javascript" src="js/jquery-1.11.1.js"> </script>
+		<script>
+			$('div').each(function (index,elements) {
+//				console.log($('div').eq(index));  //[div, prevObject: jQuery.fn.init[3], context: document]
+//				console.log($(this).index);
+//				console.log($(this).width());
+//				console.log(index); //0 1 2 
+//				console.log(elements);//<div style="width: 200px;"></div>
+//				console.log($(this));//[div, context: div]
+				console.log( $("div").eq( $(this).index() ).width()+'---'+index );
+		
+				
+
+				
+				
+			})
+		</script>
+	</body>
+</html>

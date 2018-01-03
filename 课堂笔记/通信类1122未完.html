@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通信类</title>
+	<script>
+	  window.onload = function  () {
+    var oDiv = document.getElementById("div")
+	  	console.log(oDiv);
+	  }
+	</script>
+	</head>
+	<body>
+	  <div id="div"></div>
+	  1、什么是同源策略及限制
+	  2、前后端如何通讯
+	  3、如何创建ajax  借助于第三方库：jq的ajax方法 vue的插件等。动手自己写原生js
+	  4、跨域通信的几种方式
+	  
+	  答：1、同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。
+	    这是一个用于隔离潜在恶意文件的关键的安全机制。
+	  源：协议、域名、端口
+	 限制：cookie localstorage IndexDB 无法获取 
+	     DOM无法获得
+	     AJAX请求不能发送
+	  2、Ajax：同源策略
+	    WebSocket：不受同源策略的限制
+	    CORS: 即支持同源通信，也支持跨源通信
+	    3、XMLHttpRequest对象的工作流程
+    	    兼容性处理
+    	    事件的触发条件
+    	    事件的触发顺序
+    	    304重定向：利用本地缓存。不加304会收不到响应.
+    	    206：媒体资源，媒体资源比较大，如果不加206收不到响应。
+    	4、JSONP：原理：script标签的异步加载来实现、怎么实现的、让你实现你怎么实现
+    	        1发起请求并告诉服务器callback的名称，将来是作为函数名给你返回的。本地要有一个jsonp的全局函数，后面才会把给你的东西执行出来。
+    	  Hash：hash改变，页面不刷新。search改变页面刷新，所以不能用search
+    	  postMessage （H5）：实现跨域通信
+    	  WebSocket：不受同源策略的限制
+    	  CORS：相当于支持跨域通信的Ajax。浏览器在http头中加一个origin，来允许跨域
+	</body>
+	
+	<script src="http://www.abc.com?callback=jsonp&data=***"></script>
+	<script>
+	  // 服务器下发:
+	  jsonp({
+	    data: {
+	      
+	    }
+	  })
+	  
+
+	</script>
+</html>

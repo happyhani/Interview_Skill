@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  process.html
+	  js单线程
+	  任务队列：同步任务和异步任务
+	  同步任务：while 优先于异步任务
+	  异步任务： 回调函数（最基本）  setTimeout、setInterval DOM事件（事件监听）   es6的Promise   "发布/订阅模式"（publish-subscribe pattern），又称"观察者模式"（observer pattern）。
+	分清 异步任务的放入时间和执行时间
+	 
+	 事件循环
+	   任务队列
+	 运行栈里运行同步任务，浏览器也就是js引擎在遇到异步任务时，不会将他放在运行栈里，用**模块将setTimeout拿走，也不是立马放在任务队列中，当时间到了再把它放在异步队列中。
+	 运行栈中没有任务了，就去异步队列中读，再放在运行栈中运行，setTimeout中的函数体就成了运行栈中的同步任务。当执行完再去异步队列中读。如此循环就是Event Loop
+	
+	setTimeout设置为0时，最小值其实是4
+	一共几点：
+	1、运行栈中是同步任务
+	2、什么时候去异步队列去取任务
+	3、什么时候在异步队列中放异步任务
+	
+DOM事件：使用addEventListener注册一个类型的事件，浏览器有一个模块去接收他，当这个事件被触发，也就是监听GUI线程。用户点击了某个按钮，浏览器的一个模块将我们注册事件的函数体扔到异步队列中。
+如果出现页面一直在执行，点某个按钮卡住了，因为js是单线程
+	
+	</body>
+</html>

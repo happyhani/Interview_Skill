@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <style type="text/css">
+	    * {
+	      margin: 0;
+	      padding: 0;
+	    }
+	  	img {
+	  	  width: 100%;
+	  	  /*height: -webkit-calc(1600px*0.3);*/
+	  	}
+	  	.bg {
+	  	  background: url("图层-1.jpg") no-repeat center 40%;
+	  	  background-size: cover;
+	  	}
+	  </style>
+	  <!--<img src="图层-1.jpg" alt="" id="img"/>-->
+	  <div class="bg" id="bg"></div>
+	  <script>
+	    window.onload = function () {
+	      var bg = document.getElementById('bg');
+	      bg.style.width = document.documentElement.clientWidth + 'px';
+	      bg.style.height = bg.offsetWidth*0.2 + 'px';
+	      window.onresize = function () {
+	      	bg.style.width = document.documentElement.clientWidth + 'px';
+          bg.style.height = bg.offsetWidth*0.2 + 'px';
+	      }
+	    }
+//	    var styObj = getComputedStyle(img);
+//    img.style.height = parseInt(styObj.width)*10% + 'px';
+	  </script>
+	</body>
+</html>

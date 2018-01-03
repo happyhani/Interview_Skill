@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<div id="div_f">
+			<button>按钮1</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+			function Person(name) {
+		     this.name = name;
+		    //  this.getName = function() {
+		    //      return 'constructor';
+		    //  }
+		 }
+		Person.prototype = {
+			constructor: Person,
+			getName: function() {alert('1123')},
+			showName: function() {}
+			
+		}
+		
+		var abc = {};
+		var fun= function Function(){};
+		console.log(Person.prototype.constructor);  //function Person(name) {}
+		console.log(abc.constructor);				//function Object() { [native code] }
+		console.log(fun.prototype);		//Object{constructor:Function(),__proto__:Object}
+
+		function Coo() {
+			
+		}
+		var per1 = new Person();
+		per1.getName()  //1123
+	</script>
+
+</html>

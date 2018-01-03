@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+	    var o1 = {name:'o1'};
+	    var o2 = new Object({name:'o2'});
+	    
+	    var o3 = new M('o3');
+	    function M (name) {
+	      this.name = name;
+	    }
+	    M.prototype.say = function () {
+	    	console.log('hi');
+	    }
+      
+      var p = {name:'o4'};
+	    var o4 = Object.create(p);
+	    o4.name = 'o5';
+	  </script>
+	</body>
+</html>
