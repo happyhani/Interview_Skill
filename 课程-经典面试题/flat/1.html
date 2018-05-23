@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+      /*
+       * 考察点：递归、隐式类型转换、遍历器
+       * 1、递归
+       */
+      
+      function flat (array) {
+        var result =[];
+        var each = function (arr) {
+          arr.forEach((item) => {
+            if (item instanceof Array) {
+              each (item);
+            }else {
+              result.push(item);
+            }
+          });
+        }
+        each(array);
+        return result.join('+');
+      }
+      
+      let arr=['a',['b','c',['c1','c2']],'d','e','f',[1,2,3],'g','h'];
+      let len = arr.length;
+      flat(arr);
+      console.log(flat(arr));
+    </script>
+	</body>
+</html>

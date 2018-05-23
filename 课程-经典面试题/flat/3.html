@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+      /*
+       * 考察点：递归、隐式类型转换、遍历器
+       * 1、toString() 格式转换
+       * 2、讨一个巧，将toString方法重写了  但是这样太松散，不严谨
+       * 3、思路: arr是一个数组，不是基本类型也不是一个数字。他会先调用valueOf，返回是数组本身，如果还不是基本类型，紧接着调用toString，返回的是基本类型的话到此为止，如果还不是基本类型会报错
+       */
+      
+      // 松散的
+//    Array.prototype.toString = function () {
+//    	return this.join(',');
+//    }
+//    function flat (arr) {
+//    	return arr + ''; 
+//    }
+//    let arr = ['a',['b','c',['c1','c2']],'d','e','f',[1,2,3],'g','h'];
+//    flat (arr);
+
+      // 严谨的
+      function flat (arr) {
+        let toString =	Array.prototype.toString;   // 先得到原来的
+        Array.prototype.toString = function () {    // 改写
+      	 return this.join('-');
+        }
+        let result = arr + '';
+        Array.prototype.toString = toString;        // 再还原
+        return result;
+      } 
+      let arr = ['a',['b','c',['c1','c2']],'d','e','f',[1,2,3],'g','h'];
+      flat(arr);
+      console.log(flat(arr));
+      
+      // valueOf
+//    function flat (arr) {
+//      let valueOf =  Array.prototype.valueOf;   // 先得到原来的
+//      Array.prototype.valueOf = function () {    // 改写
+//       return this.join('+');
+//      }
+//      let result = arr + '';
+//      Array.prototype.valueOf = valueOf;        // 再还原
+//      return result;
+//    } 
+//    let arr = ['a',['b','c',['c1','c2']],'d','e','f',[1,2,3],'g','h'];
+////    flat(arr);
+//    console.log(flat(arr));
+    </script>
+	</body>
+</html>
