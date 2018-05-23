@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+	    var a = {a:1}
+	    Number(a);
+	    1.a.valueOf                  -> {a:1}
+	    2.a.toString()               -> "[object Object]"
+	    3.Number("[object Object]")  -> NaN
+	    
+	    var b = {
+	      b: 1,
+	      toString: function () {
+	      	return {
+	      	  a:2,
+	      	};
+	      },
+	      valueOf: function () {
+	        return "b";
+	      },
+	   
+	    };
+	    String(b);
+      1.b.toString()               -> {a: 2}
+      2.b.valueOf                  -> ƒ () { return "b"; }
+      3.b.toString() 
+	  </script>
+	</body>
+</html>

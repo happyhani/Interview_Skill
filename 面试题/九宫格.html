@@ -124,28 +124,40 @@
         .wrapper.table {
           width: 900px;
           height: 300px;
-          display: table-row-group;
+          display: table;
         }
-        .wrapper.table li {
+        .wrapper.table>div {
+          display: table-row;
+          /*width: 100%;*/
+        }
+        .wrapper.table>div>div {
           display: table-cell;
           width: 30%;
           height: 90px;
+          box-sizing: border-box;
+          border: 1px solid #008000;
           background: #FFFF00;
-          list-style: none;
+          border-collapse: collapse;
         }
-        .wrapper.table li:hover {
+        .wrapper.table div:hover {
           background: aqua;
         }
       </style>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
+      <div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+      <div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
     </div>
 	 
 	 <!--flex布局边框九宫格-->

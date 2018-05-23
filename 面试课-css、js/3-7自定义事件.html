@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <button id="btn">按钮</button>
+	  <script>
+	    /*
+	     * 
+	     * 使用场景：有一个按钮，不是一个常规的click事件，想自己增加一个事件，在别的地方触发这个事件而不是用回调的方式去处理，这时就可以用自定义事件。
+	     * 两种方式:new Event(事件名)/new CustomEvent(事件名，object参数)
+	     * 区别：第二种可以添加object参数
+	     */
+	    
+	    // 注册自定义事件
+	    var eve = new Event('custom'); // 声明一个事件custom，不能加参数
+	    var eve2 = new CustomEvent('customEv', {
+	      detail: {
+	        name: "hani"
+	      }
+//      bubbles: true,
+//      cancelable: false
+	    }); 
+	    
+//	    给DOM 绑定事件
+	    var ev = document.getElementById("btn");
+	    ev.addEventListener('custom', function () { 
+	    	console.log('custom');
+	    });
+	    // DOM节点ev.dispatchEvent(xxx);xxx是事件对象
+	    ev.dispatchEvent(eve); 
+	    
+	    ev.addEventListener('customEv', function (e) { 
+        console.log(e.detail);
+      });
+      setTimeout(function () {
+        ev.dispatchEvent(eve2); 
+      },1000);
+	  </script>
+	</body>
+</html>

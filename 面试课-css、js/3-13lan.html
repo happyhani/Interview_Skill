@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		  html * {
+        margin: 0;
+        padding: 0;
+      }
+		  .layout article div {
+        min-height: 100px;
+      }
+      .layout {
+        margin-top: 10px;
+      }
+      .left {
+        width: 300px;
+        background: rgba(0,0,0,0.2);
+      }
+      .right {
+        width: 300px;
+        background: #268BD2;
+      }
+      .content{
+        background: #33CC33;
+      }
+		</style>
+	</head>
+	<body>
+	  <!--浮动:-->
+	  <section class="layout float">
+	    <style>
+	      .layout.float .left{
+	        width: 300px;
+	        background: rgba(0,0,0,0.2);
+	        float: left;
+	        
+	      }
+	      .layout.float .right{
+          width: 300px;
+  		    background: #268BD2;
+          float: right;
+        }
+        .layout.float .content{
+          display: inline-block;
+          background: #33CC33;
+        }
+	    </style>
+	    <article class="left-center-right">
+	      <div class="left">left</div>
+	      <div class="right">right</div>
+	      <div class="content">iweiwie</div>
+	    </article>
+	  </section>
+	  
+	  <!--定位：-->
+	  <section class="layout position">
+	    <style>
+	      .layout.position{
+	        position: relative;
+	      }
+	      .layout.position div{
+	        position: absolute;
+	      }
+	      .left {
+	        left: 0;
+	      }
+	      .right {
+	        right: 0;
+	      }
+	      .content {
+	        left: 300px;
+	        right: 300px;
+	      }
+	    </style>
+	    <article class="left-content-right">
+	      <div class="left">left</div>
+	      <div class="content">fkjfije</div>
+	      <div class="right">right</div>
+	    </article>
+	  </section>
+	  
+	  <!--flex：-->
+    <section class="layout flex">
+      <style>
+        .layout.flex {
+          margin-top: 120px;
+        }
+        .layout.flex article{
+          display: flex;
+        }
+        .left {
+        }
+        .right {
+        }
+        .content {
+          flex: 1;
+        }
+      </style>
+      <article class="left-content-right">
+        <div class="left">left</div>
+        <div class="content">fkjfije</div>
+        <div class="right">right</div>
+      </article>
+    </section>
+    
+    <!--table：-->
+    <section class="layout table">
+      <style>
+        .layout.table article{
+          display: table;
+          width: 100%;
+          min-height: 100px;
+        }
+        .left {
+          display: table-cell;
+        }
+        .right {
+          display: table-cell;
+        }
+        .content {
+          display: table-cell;
+        }
+      </style>
+      <article class="left-content-right">
+        <div class="left">left</div>
+        <div class="content">fkjfije</div>
+        <div class="right">right</div>
+      </article>
+    </section>
+    
+    <!--grid：-->
+    <section class="layout grid">
+      <style>
+        .layout.grid article{
+          display: grid;
+          grid-template-columns: 300px auto 300px;
+          grid-template-rows: 100px;
+        }
+        .left {
+        }
+        .right {
+        }
+        .content {
+        }
+      </style>
+      <article class="left-content-right">
+        <div class="left">left</div>
+        <div class="content">fkjfije</div>
+        <div class="right">right</div>
+      </article>
+    </section>
+    
+    <div style="text-align: center;width: 300px;background: #008000;height: 200px;">
+      <p style="text-align: left;background: palevioletred; display: inline-block;">sci laboriosam itaque..</p>
+    </div>
+	</body>
+</html>

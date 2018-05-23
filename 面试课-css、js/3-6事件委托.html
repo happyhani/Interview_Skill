@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <ul id="ul">
+	  	<li>1</li>
+	  	<li>2</li>
+	  	<li>3</li>
+	  	<li>4</li>
+	  	<li>5</li>
+	  	<li>6</li>
+	  	<li>7</li>
+	  	<li>8</li>
+	  	<li>9</li>
+	  	<li>10</li>
+	  </ul>
+	  <botton id="btn">安妮</botton>
+	  <script>
+//	    var ul=document.getElementById("ul");
+	    ul.addEventListener('click',function (event) {
+	      var event = event || window.event;
+	    	console.log(event.currentTarget, event.target);
+	    }, false);
+	    
+	    btn.addEventListener('click', function (event) {
+        var event = event || window.event;
+        event.stopImmediatePropagation();
+        console.log("ab");
+      }, false);
+      
+	    btn.addEventListener('click', function (event) {
+	    	var event = event || window.event;
+        console.log("a");
+	    }, false);
+	    
+	  </script>
+	</body>
+</html>

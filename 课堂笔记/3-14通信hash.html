@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>A</title>
+	</head>
+	<body>
+	  
+	  <iframe src="3-14B.html" width="200px" height="200px"></iframe>
+	  <script>
+	    var B = document.getElementsByTagName("iframe")[0];
+	    B.src = B.src + "#" + 'data';
+	    console.log(B.src);
+	  </script>
+	</body>
+</html>

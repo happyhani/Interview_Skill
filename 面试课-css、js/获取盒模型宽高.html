@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS如何获取和设置盒模型对应的宽高</title>
+		<style type="text/css">
+			#div1 {
+			  width: 200px;
+			  height: 80px;
+			  background: #ddd;
+			  padding: 20px;
+			  border: 10px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+	  <div id="div1" style="width: 300px;">123</div>
+	  <script>
+	    var wid = window.getComputedStyle(div1).width;
+	    
+	    console.log(wid);                        // 3种方式
+	    console.log(div1.style.width);           // 只能获取行内样式
+	    // console.log(div1.currentStyle.width); // IE
+	    
+	    console.log(div1.getBoundingClientRect());
+	    console.log(div1.getBoundingClientRect().width);  // 360
+	    console.log(div1.getBoundingClientRect().height); // 140
+//	  bottom:148
+//    height:140
+//    left:8
+//    right:368
+//    top:8
+//    width:360
+
+
+// dom.getBoundingClientRect().width/height：
+// 计算一个元素的绝对位置，计算一个元素在视窗中的绝对位置
+	    
+	  </script>
+	</body>
+</html>

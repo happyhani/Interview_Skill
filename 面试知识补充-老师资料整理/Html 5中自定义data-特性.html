@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Html5 custom data attribute Test</title>
+</head>
+<body>
+    <li class="user" data-name="Peter Liu" data-city="ShangHai" data-lang="CSharp" data-food="apple">
+      <b>Peter says:</b> <span>Hello, how are you?</span>
+    </li>
+    <div id="div" data-hani="aiyou" data-doing="shengzhijiaxin" style="width: 20px;height: 20px;background: #008000;"></div>
+    <span id="span2">div</span>
+    <script type="text/javascript">
+      var user = document.getElementsByTagName("li")[0];
+      var pos = 0, span = user.getElementsByTagName("span")[0];
+  
+      var phrases = [
+        { name: "city", prefix: "I am from " },
+        { name: "food", prefix: "I like to eat " },
+        { name: "lang", prefix: "I like to program in " }
+      ];
+  
+      user.addEventListener("click", function () {
+        var phrase = phrases[pos++];
+        // Use the .dataset property
+        span.innerHTML = phrase.prefix + user.dataset[phrase.name];
+        // IE9
+//      span.innerHTML = phrase.prefix + user.getAttribute('data-'+phrase.name);
+      }, false);
+      
+//    自己动手:
+      var contents = [
+        { name: "hani", thing: "what" },
+        { name: "doing", thing: "gohead" }
+      ];
+      document.getElementById('div').addEventListener('click', function () {
+      	var content = contents[pos++];
+      	span2.innerHTML = content.name+":"+content.thing+div.dataset[content.name];
+      }, false);
+    </script>
+</body>
+</html>

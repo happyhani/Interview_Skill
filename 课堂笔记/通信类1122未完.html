@@ -13,15 +13,15 @@
 	<body>
 	  <div id="div"></div>
 	  1、什么是同源策略及限制
-	  2、前后端如何通讯
+	  2、前后端如何通信
 	  3、如何创建ajax  借助于第三方库：jq的ajax方法 vue的插件等。动手自己写原生js
 	  4、跨域通信的几种方式
 	  
 	  答：1、同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。
 	    这是一个用于隔离潜在恶意文件的关键的安全机制。
-	  源：协议、域名、端口
+	  源：协议http、域名www.imooc.com、端口80
 	 限制：cookie localstorage IndexDB 无法获取 
-	     DOM无法获得
+	             另一个资源的 DOM无法获得
 	     AJAX请求不能发送
 	  2、Ajax：同源策略
 	    WebSocket：不受同源策略的限制
@@ -37,12 +37,12 @@
     	  Hash：hash改变，页面不刷新。search改变页面刷新，所以不能用search
     	  postMessage （H5）：实现跨域通信
     	  WebSocket：不受同源策略的限制
-    	  CORS：相当于支持跨域通信的Ajax。浏览器在http头中加一个origin，来允许跨域
+    	  CORS：相当于支持跨域通信的Ajax。浏览器在识别你用ajax跨域请求的时候会在你的 http头中加一个origin，来允许跨域。如果是普通ajax的话，遇到跨域，浏览器就会给你拦截
 	</body>
 	
 	<script src="http://www.abc.com?callback=jsonp&data=***"></script>
 	<script>
-	  // 服务器下发:
+	  // 服务器下发:  本地要有jsonp全局函数
 	  jsonp({
 	    data: {
 	      

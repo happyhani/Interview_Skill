@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+    
+	  <script type="text/javascript">
+	    Request Headers
+      GET http://google.com/ HTTP/1.1
+      Host: google.com
+      Proxy-Connection: keep-alive //尽管操作系统缓存会考虑TTL值，但浏览器通常会忽略该值，并设置它自己的时间限制。此外HTTP协议中的Keep-Alive特性可以同时覆盖TTL和浏览器的时间限制。换句话说，只要浏览器的Web服务器愉快地通信着，并保持着TCP连接打开状态，就没有理由进行DNS查找。
+      Upgrade-Insecure-Requests: 1
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+      X-Client-Data: CKy1yQEIirbJAQiltskBCMG2yQEIqZ3KAQ==
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,* / *;q=0.8
+      Accept-Encoding: gzip, deflate, sdch   // 压缩
+      Accept-Language: zh-CN,zh;q=0.8
+      Cookie: 省略
+	    
+	  	Response Header
+	  	age:3065
+      alt-svc:quic=":443"; ma=2592000; v="41,39,38,37,35"
+      cache-control:public, max-age=7200
+      content-encoding:gzip // 对应请求头中的  Accept-Encoding
+      content-length:14635
+      content-type:text/javascript
+      date:Tue, 14 Nov 2017 07:11:57 GMT
+      expires:Tue, 14 Nov 2017 09:11:57 GMT
+      last-modified:Fri, 20 Oct 2017 23:46:20 GMT
+      server:Golfe2
+      status:304
+      timing-allow-origin:*
+      vary:Accept-Encoding // 使用代理 web服务器可以告诉代理根据一个或多个请求头来改变缓存的响应。由于压缩的决定是基于Accept-Encoding头的，因此需要在服务器的Vary响应头中包含Accept-Encoding。这使得代理会缓存响应的多个版本，为Accept-Encoding请求头的每个值缓存一份。再根据不同的Accept-Encoding值返回给浏览器不同的文件。
+      x-content-type-options:nosniff
+	  </script>
+	</body>
+</html>

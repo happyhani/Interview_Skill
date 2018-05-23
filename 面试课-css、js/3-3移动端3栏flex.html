@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      html * {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .top-center-bottom {
+        width: 100%;
+      }
+      
+      .top {
+        width: 100%;
+        background: #33CC33;
+      }
+      
+      .center {
+        background: palevioletred;
+      }
+      
+      .bottom {
+        width: 100%;
+        background: #008CFF;
+      }
+      
+      
+      .wrap {
+        display: -webkit-box;
+        -webkit-box-orient: vertical; /* 子元素纵向排列 */
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="layout flex">
+      <style>
+        .layout.flex article {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+        }
+        
+        .top {
+          position: fixed;
+          top: 0;
+          height: 40px;
+        }
+        
+        .center {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          width: 100%;
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+        
+        .bottom {
+          position: fixed;
+          bottom: 0;
+          height: 40px;
+        }
+      </style>
+      <article class="top-center-bottom">
+        <div class="top"></div>
+        <div class="center">
+          <div class="scroll">
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+                                中间内容Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam illo odio eveniet ea quod velit ullam quas! Dicta labore alias nam praesentium blanditiis asperiores autem odio. Quam culpa laboriosam aperiam!</div>
+          </div>
+        <div class="bottom"></div>
+      </article>
+    </section>
+  </body>
+
+</html>

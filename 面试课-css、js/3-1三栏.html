@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>三栏布局-五种方式</title>
+		<style>
+		  html * {
+		    margin: 0;
+		    padding: 0;
+		  }
+		  .layout article div {
+		    min-height: 100px;
+		  }
+		  .layout {
+		    margin-top: 10px;
+		  }
+		</style>
+	</head>
+	<body>
+	  <section class="layout float">
+	    <style>
+	      .layout.float .left{
+	        float: left;
+	        width: 300px;
+	        background-color: red;
+	      }
+	      .layout.float .center{
+          background-color: yellow;
+          display: inline-block;
+        }
+        .layout.float .right{
+          float: right;
+          width: 300px;
+          background-color: blue;
+        }
+	    </style>
+	    <article class="left-center-right">
+	      <div class="left"></div>
+	      <div class="right"></div>
+	      <div class="center">
+	        <h2>浮动解决方案</h2>
+	        <p>增加内容</p>
+	        <p>增加内容</p>
+	        <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+	      </div>
+	    </article>
+	  </section>
+	  
+	  <!--绝对定位-->
+	  <section class="layout absolute">
+	    <style>
+	      .layout.absolute div {
+	        position: absolute;
+	      }
+	      .layout .left {
+	        left: 0;
+	        width: 300px;
+          background-color: red;
+	      }
+	      .layout .right {
+	        right: 0;
+	        width: 300px;
+          background-color: blue;
+	      }
+	      .layout .center {
+	        left: 300px;
+	        right: 300px;
+	        background-color: yellow;
+	      }
+	    </style>
+	    <article class="left-center-right">
+        <div class="left"></div>
+        <div class="center">
+          <h2>绝对定位--中间部分</h2>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+        </div>
+        <div class="right"> </div>
+	    </article>
+	  </section>
+	  
+	  <!--flexbox布局-->
+	  <section class="layout flex">
+	    <style type="text/css">
+	      .flex {
+	        margin-top: 220px;
+	      }
+	    	.layout.flex article {
+	    	  display: flex;
+	    	}
+	    	.layout.flex .left {
+	    	  width: 300px;
+	    	  background-color: red;
+	    	}
+	    	.layout.flex .center {
+	    	  flex: 1;
+	    	  background-color: yellow;
+	    	}
+	    	.layout.flex .right {
+	    	  width: 300px;
+	    	  background-color: blue;  
+	    	}
+	    </style>
+	    <article class="left-center-right">
+	      <div class="left"></div>
+	      <div class="center">
+	        <h2>flex--中间部分</h2>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+	      </div>
+	      <div class="right"> </div>
+	    </article>
+	  </section>
+	  
+	  <!--table-->
+	  <section class="layout table">
+	    <style>
+	      .layout.table article {
+	        display: table;
+	        width: 100%;
+	        height: 100px;
+	      }
+	      .layout.table article div {
+	        display: table-cell;
+	      }
+	      .layout.table .left {
+	        width: 300px;
+	        background-color: red;
+	      }
+	      .layout.table .center {
+	        background-color: yellow;
+	      }
+	      .layout.table .right {
+	        width: 300px;
+	        background-color: blue;
+	      }
+	    </style>
+	    <article class="left-center-right">
+	      <div class="left"></div>
+	      <div class="center">
+	        <h2>table--中间部分</h2>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+	      </div>
+	      <div class="right"></div>
+	    </article>
+	  </section>
+	  
+	  <!--grid-->
+    <section class="layout grid">
+      <style>
+        .layout.grid article {
+          display: grid;
+          grid-template-columns: 300px auto 300px;
+          grid-template-rows: 100px;
+        }
+        .layout.grid .left {
+          background-color: red;
+        }
+        .layout.grid .center {
+          background-color: yellow;
+        }
+        .layout.grid .right {
+          background-color: blue;
+        }
+      </style>
+      <article class="left-center-right">
+        <div class="left"></div>
+        <div class="center">
+          <h2>grid--中间部分</h2>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+          <p>增加内容</p>
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+    <script>
+      // 这块我真的不了解，看那些资料我去补？不要 不装装懂 不会装会
+      // 要谦虚
+//    不要把话说的太满
+    </script>
+	</body>
+</html>
