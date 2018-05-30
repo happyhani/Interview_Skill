@@ -1,4 +1,6 @@
 # nginx基本使用
+===============
+
 下载安装nginx
 配置nginx.conf文件
 在 D:\。。。\nginx-1.10.1目录下cmd
@@ -54,16 +56,16 @@
       
       #web scada
       server {
-            listen       280;
+            listen       8080;                 # 直接打开 localhost:8080 端口自己定
             server_name  localhost;
         
         location ^~/scada/{
-          set             $prerender 'http://192.168.66.159:38080';
+          set             $prerender 'http://192.168.66.345:4567'; # 代理的地址
           proxy_pass      $prerender;
         }
         location / {
-                root    "D:/1workspace/webScada/hiacloud-web-scada/webscada";
-                index   index.html index.htm index1.html;
+                root    "D:/。。。/webscada";                       # 本地项目地址
+                index   index.html index.htm; 
             }
       }
     }
