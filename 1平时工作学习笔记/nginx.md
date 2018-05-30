@@ -73,8 +73,11 @@ nginx -s reload：配置文件修改重装载命令
             }
       }
     }
+
 --------------------------------
+
 > 查看nginx访问日志 access_log 
+
     127.0.0.1 - - [29/May/2018:09:43:17 +0800] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36"
 
     127.0.0.1 - - [29/May/2018:09:43:18 +0800] "GET /scada/projects HTTP/1.1" 200 1278 "http://localhost:280/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36"
@@ -109,17 +112,19 @@ X-Forwarded-For: client1, proxy1, proxy2
 当用户请求经过CDN后到达Nginx负载均衡服务器时，其X-Forwarded-For头信息应该为 客户端IP,CDN的IP ，但实际情况并非如此，一般情况下CDN服务商为了自身安全考虑会将这个信息做些改动，只保留客户端IP。我们可以通过程序获得X-Forwarded-For信息或者通过Nginx的add header方法来设置返回头来查看。
 
 > nginx 主进程号pid 在logs/nginx.pid中
+
 nginx.pid文件在刚安装的时候就是没有，其实在启动 nginx 时自动生成的 里面存放的是 当前 nginx 主进程的 ID 号。nginx的结束重启一般是通过下面命令来实现的：kill -QUIT 26000 其中26000是nginx的主进程号
 
 > linux 的ps
-ps命令最常用的还是用于监控后台进程的工作情况,因为后台进程是不和屏幕键盘这些标准输入/输出设备进行通信的,所以如果需要检测其情况,便可以使用ps命令了.
-ps -ef | grep 'nginx'
 
-ps -ef|grep详解:
-PS是LINUX下最常用的也是非常强大的进程查看命令
-中间的|是管道命令 是指ps命令与grep同时执行
-grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。grep命令是查找，是一种强大的文本搜索工具，
--ef是两个参数的合并写法
--e 显示所有进程。
--f 全格式。
-以下这条命令是检查java 进程是否存在：ps -ef |grep java
+  ps命令最常用的还是用于监控后台进程的工作情况,因为后台进程是不和屏幕键盘这些标准输入/输出设备进行通信的,所以如果需要检测其情况,便可以使用ps命令了.
+  ps -ef | grep 'nginx'
+
+  ps -ef|grep详解:
+  PS是LINUX下最常用的也是非常强大的进程查看命令
+  中间的|是管道命令 是指ps命令与grep同时执行
+  grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。grep命令是查找，是一种强大的文本搜索工具，
+  -ef是两个参数的合并写法
+  -e 显示所有进程。
+  -f 全格式。
+  以下这条命令是检查java 进程是否存在：ps -ef |grep java
