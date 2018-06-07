@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>水的体积</title>
+</head>
+<body>
+  <script>
+    var arr = [1,2,3,2,4,0,4,3,5,4]; 
+    var num = 0;
+    var num1 = 0;
+    for(let i=0;i<arr.length-1;i++) {
+      for(let j=i+1;j<arr.length;j++) {
+        if(num1==0) {
+          if(arr[i]<=arr[j]) {
+          num+=arr[i];
+          break;
+          } else if (arr[i]>arr[j]){
+            num1+=1;
+          }
+        }else {
+          if(arr[i]>arr[j]){
+            num1+=1;
+          }else if(arr[i]<=arr[j] && num1>0) {
+            num += arr[i] * num1;
+            num1 = 0;
+          }
+        }
+      }
+    }
+    console.log(num);
+  </script>
+</body>
+</html>
