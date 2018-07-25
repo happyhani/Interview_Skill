@@ -35,10 +35,12 @@
 	      this.age = '24';
 	    }
 	    All.prototype.type = '嘻哈';
+			console.log(new All().hasOwnProperty('type'))
 	    console.log(new All().hasOwnProperty('name'))
 	    console.log(All.prototype.isPrototypeOf(new All()))
 	    console.log(All.prototype.isPrototypeOf(new All));
-	    console.log(new All().__proto__.constructor === All);
+			console.log(new All().__proto__.constructor === All);
+			console.log(new Opp().__proto__.constructor)
 	 </script>
 	</body>
 </html>
